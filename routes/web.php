@@ -28,3 +28,5 @@ Route::get('about',function (){
     ]);
 });
 
+Route::get('/articles/{articles}','ArticlesController@show');
+
