@@ -37,6 +37,7 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
+        //
         $article = new Article();
         $article->title=request('title');
         $article->excerpt=request('excerpt');
