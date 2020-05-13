@@ -8,7 +8,7 @@
                     <div class="title">
                         <h3>
                             <a href="/articles/{{ $article->id }}">
-{{--                            <a href="{{route('articles.show', $article->id) }}">--}}
+                                {{--                            <a href="{{route('articles.show', $article->id) }}">--}}
                                 {{ $article->title }}
                             </a>
                         </h3>

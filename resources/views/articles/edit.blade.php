@@ -1,8 +1,8 @@
 @extends ('layout')
 
 @section ('head')
-    <link href="/css/default.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/default.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/css/fonts.css" rel="stylesheet" type="text/css" media="all"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
 
 @endsection
@@ -18,7 +18,7 @@
                     <label class="label" for="title">Title</label>
 
                     <div class="control">
-                        <input class="input" type="text"  name="title" id="title" value="{{$article->title}}">
+                        <input class="input" type="text" name="title" id="title" value="{{$article->title}}">
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                     <label class="label" for="body">Body</label>
 
                     <div class="control">
-                        <textarea class="textarea" name="body" id="body" >{{$article->body}}</textarea>
+                        <textarea class="textarea" name="body" id="body">{{$article->body}}</textarea>
                     </div>
                 </div>
                 <div class="field is-grouped">
@@ -43,8 +43,6 @@
                     </div>
                 </div>
             </form>
-
-
 
 
         </div>

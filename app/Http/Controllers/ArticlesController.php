@@ -15,8 +15,8 @@ class ArticlesController extends Controller
 
     public function index()
     {
-        $article=Article::latest()->get();
-        return view('articles.index',['articles'=>$article]);
+        $article = Article::latest()->get();
+        return view('articles.index', ['articles' => $article]);
     }
 
     /**
@@ -32,16 +32,15 @@ class ArticlesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
         $article = new Article();
-        $article->title=$request->title;
-        $article->excerpt=$request->excerpt;
-        $article->body=$request->body;
+        $article->title = $request->title;
+        $article->excerpt = $request->excerpt;
+        $article->body = $request->body;
         $article->save();
         return redirect('/articles');
     }
@@ -49,53 +48,48 @@ class ArticlesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param \App\Article $article
      * @return \Illuminate\Http\Response
      */
     public function show(Article $article)
     {
-        return  view('articles.show',['article'=>$article]);
+        return view('articles.show', ['article' => $article]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param \App\Article $article
      * @return \Illuminate\Http\Response
      */
     public function edit(Article $article)
     {
-        //
-//        $article = Article::find($article);
-        return view('articles.edit',['article'=>$article]);
+        return view('articles.edit', ['article' => $article]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Article  $article
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Article $article
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Article $article)
     {
-        //
-        // $article = Article::find($id);
-        $article->title=$request->title;
-        $article->excerpt=$request->excerpt;
-        $article->body=$request->body;
+        $article->title = $request->title;
+        $article->excerpt = $request->excerpt;
+        $article->body = $request->body;
         $article->save();
-        return redirect('/articles/'.$article->id);
+        return redirect('/articles/' . $article->id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Article  $article
+     * @param \App\Article $article
      * @return \Illuminate\Http\Response
      */
     public function destroy(Article $article)
     {
-        //
     }
 }

@@ -17,24 +17,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact',function (){
+Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('about',function (){
+Route::get('about', function () {
     $articles = App\Article::take(3)->latest()->get();
-    return view('about',[
-        'articles'=>$articles
+    return view('about', [
+        'articles' => $articles
     ]);
 });
 
-Route::get('/articles','ArticlesController@index');
-Route::get('/articles/create','ArticlesController@create');
-Route::post('/articles','ArticlesController@store');
-Route::get('/articles/{articles}/edit','ArticlesController@edit');
-Route::get('/articles/{article}','ArticlesController@show');
+Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles/create', 'ArticlesController@create');
+Route::post('/articles', 'ArticlesController@store');
+Route::get('/articles/{articles}/edit', 'ArticlesController@edit');
+Route::get('/articles/{article}', 'ArticlesController@show');
 //Route::get('/articles/{article:title}',function (App\Article $article){
 //    return $article;
 //});
-Route::put('/articles/{articles}','ArticlesController@update');
+Route::put('/articles/{articles}', 'ArticlesController@update');
 
