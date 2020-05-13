@@ -3,7 +3,7 @@
 @section('content')
     <div id="wrapper">
         <div id="page" class="container">
-            @foreach ($articles as $article)
+            @forelse ($articles as $article)
                 <div id="content">
                     <div class="title">
                         <h3>
@@ -20,7 +20,9 @@
                         {{ $article->excerpt }}
                     </p>
                 </div>
-            @endforeach
+            @empty
+                <p>No Relevant Articles Yet.</p>
+            @endforelse
 
         </div>
     </div>
