@@ -39,10 +39,9 @@ class ArticlesController extends Controller
     {
         //
         $article = new Article();
-        $article->title=request('title');
-        $article->excerpt=request('excerpt');
-        $article->body=request('body');
-
+        $article->title=$request->title;
+        $article->excerpt=$request->excerpt;
+        $article->body=$request->body;
         $article->save();
         return redirect('/articles');
     }
@@ -55,7 +54,6 @@ class ArticlesController extends Controller
      */
     public function show(Article $article)
     {
-        $article= Article::findOrFail($article);
         return  view('articles.show',['article'=>$article]);
     }
 
@@ -68,6 +66,8 @@ class ArticlesController extends Controller
     public function edit(Article $article)
     {
         //
+//        $article = Article::find($article);
+        return view('articles.edit',['article'=>$article]);
     }
 
     /**
@@ -80,6 +80,12 @@ class ArticlesController extends Controller
     public function update(Request $request, Article $article)
     {
         //
+        // $article = Article::find($id);
+        $article->title=$request->title;
+        $article->excerpt=$request->excerpt;
+        $article->body=$request->body;
+        $article->save();
+        return redirect('/articles/'.$article->id);
     }
 
     /**

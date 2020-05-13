@@ -31,5 +31,10 @@ Route::get('about',function (){
 Route::get('/articles','ArticlesController@index');
 Route::get('/articles/create','ArticlesController@create');
 Route::post('/articles','ArticlesController@store');
-Route::get('/articles/{articles}','ArticlesController@show');
+Route::get('/articles/{articles}/edit','ArticlesController@edit');
+Route::get('/articles/{article}','ArticlesController@show');
+//Route::get('/articles/{article:title}',function (App\Article $article){
+//    return $article;
+//});
+Route::put('/articles/{articles}','ArticlesController@update');
 
