@@ -19,11 +19,11 @@
 
                 {{ $article->body }}
 
-                {{--                <p>--}}
-                {{--                    @foreach($article->tags as $tag)--}}
-                {{--                        <a href="#"> {{ $tag->name }}</a>--}}
-                {{--                    @endforeach--}}
-                {{--                </p>--}}
+                <p style="margin-top: 1em">
+                    @foreach($article->tags as $tag)
+                        <a href="#"> {{ $tag->name }}</a>
+                    @endforeach
+                </p>
             </div>
 
         </div>
