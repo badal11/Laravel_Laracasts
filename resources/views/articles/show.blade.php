@@ -21,7 +21,7 @@
 
                 <p style="margin-top: 1em">
                     @foreach($article->tags as $tag)
-                        <a href="#"> {{ $tag->name }}</a>
+                        <a href="/articles?tag={{ $tag->name }}"> {{ $tag->name }}</a>
                     @endforeach
                 </p>
             </div>
