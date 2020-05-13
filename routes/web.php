@@ -36,5 +36,5 @@ Route::get('/articles/{article}', 'ArticlesController@show');
 //Route::get('/articles/{article:title}',function (App\Article $article){
 //    return $article;
 //});
-Route::put('/articles/{articles}', 'ArticlesController@update');
+Route::put('/articles/{article}', 'ArticlesController@update');
 
